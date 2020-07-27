@@ -23,46 +23,46 @@
        <div class="calc-body"> 
         <div class="calc-button-row"> 
          <div class="button" onclick="insertNumber(7)">
-          7
+           7 
          </div> 
          <div class="button" onclick="insertNumber(8)">
-          8
+           8 
          </div> 
          <div class="button" onclick="insertNumber(9)">
-          9
+           9 
          </div> 
         </div> 
         <div class="calc-button-row"> 
          <div class="button" onclick="insertNumber(4)">
-          4
+           4 
          </div> 
          <div class="button" onclick="insertNumber(5)">
-          5
+           5 
          </div> 
          <div class="button" onclick="insertNumber(6)">
-          6
+           6 
          </div> 
         </div> 
         <div class="calc-button-row"> 
          <div class="button" onclick="insertNumber(1)">
-          1
+           1 
          </div> 
          <div class="button" onclick="insertNumber(2)">
-          2
+           2 
          </div> 
          <div class="button" onclick="insertNumber(3)">
-          3
+           3 
          </div> 
         </div> 
         <div class="calc-button-row"> 
          <div class="button" onclick="deleteNumber()">
-          &lt;
+           &lt; 
          </div> 
          <div class="button" onclick="insertNumber(0)">
-          0
+           0 
          </div> 
          <div class="button" onclick="clearNumber()">
-          C
+           C 
          </div> 
         </div> 
         <div> 
@@ -82,9 +82,10 @@
     </div> 
    </div> 
    <script>
+   
         //Pin Generate 
         function pinGenerator(){
-            document.getElementById("generatePinNumber").value = parseInt(Math.random() * 10000);
+            document.getElementById("generatePinNumber").value = Math.floor(Math.random() * 9999);
         }
 
         //Insert Number
@@ -105,6 +106,7 @@
                 document.getElementById("pinNumber").value = presentValue.slice(0, -1);
             }
         }
+        
         //Pin Matching
         function isMatch(){
             const generatePin = document.getElementById("generatePinNumber").value;
@@ -122,10 +124,11 @@
             const actionCount = parseInt(document.getElementById("actionCountdown").innerText);
                 const actionLeft = document.getElementById("actionCountdown").innerText = actionCount -1;
                 if(actionLeft < 0){
-                    alert("❌ 0 Try Left. Please try after 30 minutes!!!");
+                    alert("❌ 0 Try Left. Please try after 15 seconds !!!");
                     document.getElementById("actionCountdown").innerText = 0;
                 }
         }
+        
         //Notify
         function notify(id){
             document.getElementById("pinGeneratorSection").style.display = "none";
@@ -139,6 +142,7 @@
                 document.getElementById("notifyUnmatched").style.display = "block";
             }
         }
+        
         //Try Again
         function returnToTry(){
             actionCount();
@@ -146,6 +150,7 @@
             document.getElementById("pinGeneratorSection").style.display = "block";
             document.getElementById("pinInputSection").style.display = "block";
         }
+        
     </script>  
   </div>
   <footer> 
